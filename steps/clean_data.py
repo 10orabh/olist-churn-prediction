@@ -3,5 +3,5 @@ import pandas as pd
 from zenml import step
 
 @step
-def clean_df(data: pd.DataFrame) -> pd.DataFrame:
+def clean_df(data: pd.DataFrame) -> None:
     pass

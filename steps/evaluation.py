@@ -3,7 +3,7 @@ import pandas as pd
 from zenml import step
 
 @step
-def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series) -> dict:
+def evaluate_model(df: pd.DataFrame) -> None:
     """
     Evaluates the given model on the test data and returns evaluation metrics.
 

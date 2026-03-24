@@ -3,5 +3,5 @@ from src.logger import get_logger
 from zenml import step
 
 @step
-def train_model(data: pd.DataFrame) -> str:
+def train_model(data: pd.DataFrame) -> None:
     pass
