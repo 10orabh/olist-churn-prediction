@@ -22,7 +22,7 @@ class DataPreProcessStrategy(DataStrategy):
         try:
             logging.info("Starting data preprocessing...")
             # Handle missing values
-            data = data.fillna(data.mean())
+            data = data.fillna(data.mean(numeric_only=True))
             # Encode categorical variables
             data = pd.get_dummies(data)
 
@@ -61,11 +61,3 @@ class DataCleaning:
             logging.error(f"Error during data cleaning: {e}")
             raise
 
-if __name__ == "__main__":
-    data = pd.read_csv("D:\\sourabh project\\olist-churn-prediction\\data\\raw\\data.csv")
-    
-    # Data Preprocessing
-    preprocess_strategy = DataPreProcessStrategy()
-    data_cleaner = DataCleaning(data, preprocess_strategy)
-    data_cleaner.handle_data()
-    
