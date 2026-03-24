@@ -1,13 +1,12 @@
 import logging
-from abc import ABC, abstractmethod
-from typing import Any 
+from abc import ABC, abstractmethod 
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
-
+from sklearn.base import ClassifierMixin
 class Model(ABC):
     """Abstract base class for machine learning models."""
     @abstractmethod
-    def train(self, X_train: pd.DataFrame, y_train: pd.Series, **kwargs) -> Any:
+    def train(self, X_train: pd.DataFrame, y_train: pd.Series, **kwargs) -> ClassifierMixin:
         """
         Train the model.
         
